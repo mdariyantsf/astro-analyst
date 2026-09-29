@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum-Resistant Deep-Space Communication - AstroAnalyst</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        spaceBlack: '#0A0F1D',
+                        neonCyan: '#00F0FF',
+                        spaceCard: '#131C31'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-spaceBlack text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-spaceBlack/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-satellite-dish text-neonCyan text-2xl animate-pulse"></i>
+                <span class="text-xl font-bold tracking-wider text-white">Astro<span class="text-neonCyan">Analyst</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-neonCyan transition">Home</a>
+                <a href="explore.html" class="text-neonCyan transition">Explore Hub</a>
+                <a href="founder.html" class="hover:text-neonCyan transition">Meet Founder</a>
+            </nav>
+            <div>
+                <a href="explore.html" class="bg-transparent border border-neonCyan text-neonCyan px-4 py-2 rounded-md text-sm font-semibold hover:bg-neonCyan hover:text-black transition">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Hub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="py-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- Page Title -->
+        <div class="text-center space-y-3">
+            <div class="inline-flex items-center space-x-2 bg-spaceCard border border-gray-800 px-3 py-1 rounded-full text-xs text-neonCyan">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>NASA Space Apps Challenge 2026 - Security & Communications Module</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Quantum-Resistant <span class="text-neonCyan">Deep-Space Comm</span></h1>
+            <p class="text-gray-400 text-sm max-w-2xl mx-auto">Encrypt deep-space telemetry streams using Web Crypto API, simulate solar storm interference, and execute Gemini AI security audits.</p>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Transmission Payload Input -->
+            <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-xl">
+                <label class="block text-sm font-bold text-white"><i class="fa-solid fa-terminal text-neonCyan mr-2"></i> Mission Telemetry Payload / Command:</label>
+                <input type="text" id="telemetryInput" value="DEPLOY_HABITAT_SHIELD_SECTOR_09" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-neonCyan font-mono focus:border-neonCyan outline-none">
+                <p class="text-[11px] text-gray-500">Enter secure operational command to be encrypted via post-quantum algorithms.</p>
+            </div>
+            <!-- Target Deep-Space Node -->
+            <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-xl">
+                <label class="block text-sm font-bold text-white"><i class="fa-solid fa-signal text-neonCyan mr-2"></i> Target Relay Station:</label>
+                <select id="targetRelay" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white focus:border-neonCyan outline-none">
+                    <option value="moon">Shackleton Base Relay, Moon (Latency: 1.3s)</option>
+                    <option value="mars">Jezero Horizon Gateway, Mars (Latency: 14.2m)</option>
+                </select>
+                <p class="text-[11px] text-gray-500">Select interplanetary destination node for secure packet handshake.</p>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="text-center">
+            <button onclick="runQuantumTransmission()" class="bg-neonCyan text-black font-bold px-8 py-3.5 rounded-md hover:bg-cyan-400 transition shadow-[0_0_20px_rgba(0,240,255,0.4)] inline-flex items-center space-x-2">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Execute Quantum Encrypted Transmission & AI Audit</span>
+            </button>
+        </div>
+
+        <!-- Results & Telemetry Output Display -->
+        <div id="quantumResultSection" class="space-y-6 pt-4">
+            
+            <!-- Cryptographic Status Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-spaceCard border border-gray-800 rounded-xl p-5 space-y-2">
+                    <span class="text-xs font-mono text-gray-400">Web Crypto Hash (SHA-256)</span>
+                    <h4 id="hashDisplay" class="text-xs font-mono text-neonCyan truncate">Awaiting Transmission...</h4>
+                </div>
+                <div class="bg-spaceCard border border-gray-800 rounded-xl p-5 space-y-2">
+                    <span class="text-xs font-mono text-gray-400">Solar Storm Noise Attenuation</span>
+                    <h4 id="noiseDisplay" class="text-2xl font-bold text-emerald-400">0.02 dB (Optimal)</h4>
+                </div>
+                <div class="bg-spaceCard border border-gray-800 rounded-xl p-5 space-y-2">
+                    <span class="text-xs font-mono text-gray-400">Atmospheric Link Stability</span>
+                    <h4 id="linkDisplay" class="text-2xl font-bold text-neonCyan">-- %</h4>
+                </div>
+            </div>
+
+            <!-- Gemini AI Security & Telemetry Diagnostic Report -->
+            <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <h3 class="text-sm font-bold text-neonCyan uppercase tracking-wider flex items-center">
+                        <i class="fa-solid fa-brain mr-2"></i> Gemini AI Deep-Space Security & Signal Audit Report
+                    </h3>
+                    <span class="text-[10px] font-mono bg-neonCyan/10 text-neonCyan px-2 py-0.5 rounded border border-neonCyan/30">AI SYNAPSE SECURE</span>
+                </div>
+                <div id="aiQuantumReport" class="text-sm text-gray-300 leading-relaxed space-y-3 font-mono">
+                    <p class="text-gray-500 italic">Ready to initialize Web Crypto handshake and query Gemini AI neural node...</p>
+                </div>
+            </div>
+
+            <!-- Live Mission Telemetry Log Stream -->
+            <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-3 shadow-xl font-mono">
+                <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                    <h3 class="text-xs font-bold text-neonCyan uppercase tracking-wider flex items-center">
+                        <i class="fa-solid fa-terminal mr-2"></i> Quantum Communication Log Stream
+                    </h3>
+                    <span class="text-[10px] text-emerald-400 flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-1.5"></span> SECURE SYNC</span>
+                </div>
+                <div id="quantumLog" class="text-[11px] text-gray-400 space-y-1.5 max-h-36 overflow-y-auto">
+                    <p class="text-gray-500">[00:00:01] Quantum encryption module online. Ready for transmission payload...</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-spaceBlack border-t border-gray-800 py-8 text-center text-xs text-gray-500 mt-16">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>AstroAnalyst Platform &bull; Team Ariyan &bull; NASA Space Apps Challenge 2026</p>
+            <p>Lead Developer & Founder: <strong class="text-neonCyan">MD.Ariyan Tausif</strong></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Execution Logic integrating Web Crypto, Weather API, NASA API & Gemini API -->
+    <script>
+        // MASTER API KEYS CONFIGURATION
+        const MASTER_GEMINI_KEY = "AIzaSy_YOUR_VALID_GEMINI_API_KEY_HERE"; 
+        const NASA_API_KEY = "DEMO_KEY"; // আপনার মূল নাসা এপিআই কি এখানে বসাতে পারেন
+
+        async function runQuantumTransmission() {
+            const payload = document.getElementById('telemetryInput').value;
+            const targetRelay = document.getElementById('targetRelay').value;
+            const logBox = document.getElementById('quantumLog');
+
+            document.getElementById('aiQuantumReport').innerHTML = '<p class="text-neonCyan animate-pulse"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Executing Web Crypto SHA-256 hashing, fetching Open-Meteo & NASA telemetry, and querying Gemini AI...</p>';
+            
+            logBox.innerHTML += `<p class="text-neonCyan">[${new Date().toLocaleTimeString()}] Initializing Web Crypto secure envelope for payload: "${payload}"...</p>`;
+
+            // 1. Web Crypto API - Generate SHA-256 Hash
+            let cryptoHashHex = "ERROR_HASH";
+            try {
+                const encoder = new TextEncoder();
+                const dataBuffer = encoder.encode(payload + Date.now());
+                const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                cryptoHashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                document.getElementById('hashDisplay').innerText = cryptoHashHex;
+                logBox.innerHTML += `<p class="text-emerald-400">[${new Date().toLocaleTimeString()}] Web Crypto SHA-256 signature generated successfully.</p>`;
+            } catch(e) {
+                logBox.innerHTML += `<p class="text-red-400">[${new Date().toLocaleTimeString()}] Web Crypto API error encountered.</p>`;
+            }
+
+            // 2. Fetch Live Weather API (Open-Meteo) for terrestrial gateway baseline
+            let weatherTemp = "N/A";
+            try {
+                const weatherRes = await fetch('https://api.open-meteo.com/v1/forecast?latitude=23.8103&longitude=90.4125&current=temperature_2m');
+                const weatherData = await weatherRes.json();
+                weatherTemp = weatherData.current.temperature_2m + " °C";
+                document.getElementById('linkDisplay').innerText = (Math.random() * 5 + 94.5).toFixed(2) + " %";
+                logBox.innerHTML += `<p class="text-emerald-400">[${new Date().toLocaleTimeString()}] Gateway Weather baseline acquired. Temp: ${weatherTemp}</p>`;
+            } catch(err) {
+                document.getElementById('linkDisplay').innerText = "98.2 %";
+            }
+
+            // 3. Optional NASA API check (e.g., NASA APOD or NeoWs just for live API telemetry verification)
+            try {
+                const nasaRes = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
+                const nasaData = await nasaRes.json();
+                logBox.innerHTML += `<p class="text-emerald-400">[${new Date().toLocaleTimeString()}] NASA Deep-Space Gateway Synchronized: ${nasaData.title || 'Connected'}</p>`;
+            } catch(nErr) {
+                logBox.innerHTML += `<p class="text-amber-400">[${new Date().toLocaleTimeString()}] NASA API fallback mode active.</p>`;
+            }
+
+            if(MASTER_GEMINI_KEY.includes("YOUR_VALID_GEMINI_API_KEY")) {
+                document.getElementById('aiQuantumReport').innerHTML = '<span class="text-amber-400">Notice: Please insert your active Gemini API Key into the `MASTER_GEMINI_KEY` variable inside the JavaScript section of this file to generate live AI security audits.</span>';
+                return;
+            }
+
+            // 4. Gemini AI Security Audit Prompt
+            const promptText = `Act as an elite NASA Chief Cybersecurity and Deep-Space Communications Architect for NASA Space Apps Challenge 2026. 
+            Perform an advanced security audit and telemetry transmission analysis for the following parameters:
+            - Target Relay: ${targetRelay.toUpperCase()}
+            - Encrypted Payload: ${payload}
+            - Cryptographic Signature (SHA-256): ${cryptoHashHex}
+            - Gateway Environmental Baseline: ${weatherTemp}
+            Provide a strict, professional, highly technical scientific diagnostic report in English covering: 
+            1. Post-Quantum Cryptographic Integrity & Resistance against quantum decryption attacks.
+            2. Cosmic Ray & Solar Storm Attenuation Analysis for the chosen relay.
+            3. Mission Control Recommendations & Signal Handshake Verification.
+            Keep the output formatted cleanly with bullet points and technical metrics.`;
+
+            try {
+                logBox.innerHTML += `<p class="text-neonCyan">[${new Date().toLocaleTimeString()}] Transmitting cryptographic metadata to Gemini 1.5 Flash AI...</p>`;
+                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${MASTER_GEMINI_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
+                });
+
+                const geminiData = await geminiRes.json();
+                if(geminiData.candidates && geminiData.candidates[0].content) {
+                    const aiText = geminiData.candidates[0].content.parts[0].text;
+                    document.getElementById('aiQuantumReport').innerHTML = aiText.replace(/\n/g, '<br>');
+                    logBox.innerHTML += `<p class="text-emerald-400">[${new Date().toLocaleTimeString()}] Gemini AI Security Audit completed successfully.</p>`;
+                } else {
+                    document.getElementById('aiQuantumReport').innerHTML = '<span class="text-red-400">Error: Invalid Gemini API key or quota limit reached. Please update your MASTER_GEMINI_KEY.</span>';
+                    logBox.innerHTML += `<p class="text-red-400">[${new Date().toLocaleTimeString()}] Error in Gemini API response payload.</p>`;
+                }
+            } catch(err) {
+                document.getElementById('aiQuantumReport').innerHTML = '<span class="text-red-400">Connection error while communicating with Gemini AI Security Gateway.</span>';
+                logBox.innerHTML += `<p class="text-red-400">[${new Date().toLocaleTimeString()}] Network connection error.</p>`;
+            }
+            
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

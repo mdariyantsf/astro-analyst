@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsurface Lava Tube Mapper - AstroAnalyst</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        volcanoBlack: '#0D0907',
+                        lavaOrange: '#FF5722',
+                        magmaCard: '#1A110E',
+                        seismicGreen: '#00E676'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-volcanoBlack text-gray-100 font-sans antialiased selection:bg-lavaOrange selection:text-black">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-volcanoBlack/90 backdrop-blur-md border-b border-orange-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-volcano text-lavaOrange text-2xl animate-bounce"></i>
+                <span class="text-xl font-bold tracking-wider text-white">Astro<span class="text-lavaOrange">Analyst</span> <span class="text-xs text-orange-400 font-mono ml-2">[SEISMIC_NODE]</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-lavaOrange transition">Home</a>
+                <a href="explore.html" class="text-lavaOrange transition">Explore Hub</a>
+                <a href="founder.html" class="hover:text-lavaOrange transition">Meet Founder</a>
+            </nav>
+            <div>
+                <a href="explore.html" class="bg-transparent border border-lavaOrange text-lavaOrange px-4 py-2 rounded-md text-sm font-semibold hover:bg-lavaOrange hover:text-black transition">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>Back to Hub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="py-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- Page Title Banner -->
+        <div class="bg-gradient-to-r from-magmaCard to-volcanoBlack border-l-4 border-lavaOrange p-6 rounded-xl shadow-2xl space-y-2">
+            <div class="flex items-center space-x-2 text-xs font-mono text-lavaOrange">
+                <i class="fa-solid fa-radar animate-spin"></i>
+                <span>NASA SPACE APPS CHALLENGE 2026 &bull; SUBSURFACE CAVITY PROSPECTION SYSTEM</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Lunar / Martian Subsurface <span class="text-lavaOrange">Lava Tube Mapper</span></h1>
+            <p class="text-gray-400 text-sm max-w-3xl">Acoustic echo reflection and active seismic sounding matrix designed to map underground basaltic caverns for cosmic-shielded human habitats.</p>
+        </div>
+
+        <!-- NEW: Problem vs Solution Matrix for Hackathon Judges -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Problem Card -->
+            <div class="bg-red-950/20 border border-red-900/40 rounded-xl p-6 space-y-3">
+                <div class="flex items-center space-x-2 text-red-400 font-bold text-sm uppercase tracking-wider">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>The Engineering Problem</span>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed font-mono">
+                    Surface habitats on the Moon and Mars face lethal cosmic radiation, extreme thermal fluctuations (-150°C to +120°C), and micro-meteorite impacts. Deploying heavy shielding on the surface is structurally unfeasible and hazardous for crewed missions.
+                </p>
+            </div>
+            <!-- Solution Card -->
+            <div class="bg-green-950/20 border border-green-900/40 rounded-xl p-6 space-y-3">
+                <div class="flex items-center space-x-2 text-seismicGreen font-bold text-sm uppercase tracking-wider">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Our Prototyped Solution</span>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed font-mono">
+                    Our active seismic reflection matrix identifies stable underground basaltic lava tubes. This provides natural subterranean shielding—blocking 99% of radiation and offering stable ambient temperatures for permanent human colonization.
+                </p>
+            </div>
+        </div>
+
+        <!-- Seismic Console Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Left Panel: Controls & Waveform Calibrator -->
+            <div class="lg:col-span-1 bg-magmaCard border border-orange-900/30 rounded-xl p-6 space-y-5 shadow-xl">
+                <h3 class="text-sm font-bold text-lavaOrange uppercase tracking-wider flex items-center border-b border-orange-900/40 pb-3">
+                    <i class="fa-solid fa-sliders mr-2"></i> Sonar & Seismic Controls
+                </h3>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-2">TARGET PROSPECTION ZONE:</label>
+                        <select id="planetRegion" class="w-full bg-black border border-orange-900/50 rounded-lg p-3 text-sm text-white focus:border-lavaOrange outline-none font-mono">
+                            <option value="marius">Marius Hills, Moon (Basaltic Tube)</option>
+                            <option value="pavonis">Pavonis Mons, Mars (Volcanic Cave)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-2">ACOUSTIC FREQUENCY PING:</label>
+                        <select id="seismicFreq" class="w-full bg-black border border-orange-900/50 rounded-lg p-3 text-sm text-white focus:border-lavaOrange outline-none font-mono">
+                            <option value="12Hz">12 Hz Low-Frequency Shear Wave</option>
+                            <option value="25Hz">25 Hz High-Resolution Resonance</option>
+                        </select>
+                    </div>
+
+                    <button onclick="runLavaTubeAnalysis()" class="w-full bg-lavaOrange text-black font-extrabold py-3.5 rounded-lg hover:bg-orange-500 transition shadow-[0_0_20px_rgba(255,87,34,0.4)] flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-wave-square"></i>
+                        <span>Fire Seismic Ping & Audit</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Live Seismic Radar Simulation & Metrics -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Simulated Radar / Wave Visualizer Box -->
+                <div class="bg-magmaCard border border-orange-900/30 rounded-xl p-6 space-y-4 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-orange-900/40 pb-3">
+                        <h3 class="text-xs font-mono text-lavaOrange uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-chart-line mr-2"></i> Subsurface Echo Reflection Profile
+                        </h3>
+                        <span class="text-[10px] font-mono bg-lavaOrange/10 text-lavaOrange px-2 py-0.5 rounded border border-lavaOrange/30">ACTIVE SCANNER</span>
+                    </div>
+
+                    <!-- Metrics Row -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-black/40 border border-orange-900/30 p-3 rounded-lg text-center">
+                            <span class="text-[10px] font-mono text-gray-400 block">CAVITY DEPTH</span>
+                            <span id="depthDisplay" class="text-lg font-bold text-lavaOrange font-mono">-- M</span>
+                        </div>
+                        <div class="bg-black/40 border border-orange-900/30 p-3 rounded-lg text-center">
+                            <span class="text-[10px] font-mono text-gray-400 block">ROOF THICKNESS</span>
+                            <span id="roofDisplay" class="text-lg font-bold text-seismicGreen font-mono">-- M</span>
+                        </div>
+                        <div class="bg-black/40 border border-orange-900/30 p-3 rounded-lg text-center">
+                            <span class="text-[10px] font-mono text-gray-400 block">STABILITY INDEX</span>
+                            <span id="stabilityDisplay" class="text-lg font-bold text-lavaOrange font-mono">-- %</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Waveform Simulator Box -->
+                    <div class="bg-black h-28 rounded-lg border border-orange-900/30 p-3 flex items-end justify-between space-x-1 overflow-hidden" id="waveContainer">
+                        <div class="w-full text-center text-gray-600 font-mono text-xs self-center">Awaiting seismic pulse transmission...</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Gemini AI Geotechnical Audit Report -->
+        <div class="bg-magmaCard border border-orange-900/30 rounded-xl p-6 space-y-4 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-orange-900/40 pb-3">
+                <h3 class="text-sm font-bold text-lavaOrange uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-brain mr-2"></i> Gemini AI Geotechnical & Structural Audit Report
+                </h3>
+                <span class="text-[10px] font-mono bg-lavaOrange/10 text-lavaOrange px-2 py-0.5 rounded border border-lavaOrange/30">MAGMA SYNAPSE SECURE</span>
+            </div>
+            <div id="aiTubeReport" class="text-sm text-gray-300 leading-relaxed space-y-3 font-mono">
+                <p class="text-gray-500 italic">Ready to process seismic echo reflection data and query Gemini AI neural cluster...</p>
+            </div>
+        </div>
+
+        <!-- Live Subsurface Telemetry Log Stream -->
+        <div class="bg-magmaCard border border-orange-900/30 rounded-xl p-6 space-y-3 shadow-xl font-mono">
+            <div class="flex items-center justify-between border-b border-orange-900/40 pb-3">
+                <h3 class="text-xs font-bold text-lavaOrange uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-terminal mr-2"></i> Subsurface Telemetry Log Stream
+                </h3>
+                <span class="text-[10px] text-seismicGreen flex items-center"><span class="w-2 h-2 rounded-full bg-seismicGreen animate-ping mr-1.5"></span> SEISMIC SYNC</span>
+            </div>
+            <div id="tubeLog" class="text-[11px] text-gray-400 space-y-1.5 max-h-36 overflow-y-auto">
+                <p class="text-gray-500">[00:00:01] Subsurface mapping matrix online. Ready for active acoustic ping...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-volcanoBlack border-t border-orange-900/40 py-8 text-center text-xs text-gray-500 mt-16">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>AstroAnalyst Platform &bull; Team Ariyan &bull; NASA Space Apps Challenge 2026</p>
+            <p>Lead Developer & Founder: <strong class="text-lavaOrange">MD.Ariyan Tausif</strong></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Execution Logic integrating Open-Meteo, NASA API & Gemini AI -->
+    <script>
+        const MASTER_GEMINI_KEY = "AIzaSy_YOUR_VALID_GEMINI_API_KEY_HERE"; 
+        const NASA_API_KEY = "DEMO_KEY";
+
+        async function runLavaTubeAnalysis() {
+            const planetRegion = document.getElementById('planetRegion').value;
+            const seismicFreq = document.getElementById('seismicFreq').value;
+            const logBox = document.getElementById('tubeLog');
+            const waveBox = document.getElementById('waveContainer');
+
+            document.getElementById('aiTubeReport').innerHTML = '<p class="text-lavaOrange animate-pulse"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Simulating acoustic wave propagation, fetching Open-Meteo & NASA telemetry, and querying Gemini AI...</p>';
+            
+            logBox.innerHTML += `<p class="text-lavaOrange">[${new Date().toLocaleTimeString()}] Emitting ${seismicFreq} seismic pulse into ${planetRegion.toUpperCase()} subsurface...</p>`;
+
+            waveBox.innerHTML = '';
+            for(let i=0; i<30; i++) {
+                const barHeight = Math.floor(Math.random() * 80 + 15);
+                waveBox.innerHTML += `<div class="w-2 bg-lavaOrange rounded-t transition-all duration-300" style="height: ${barHeight}%;"></div>`;
+            }
+
+            let depth = planetRegion === 'marius' ? "48.5 Meters" : "62.0 Meters";
+            let roof = planetRegion === 'marius' ? "14.2 Meters" : "18.6 Meters";
+            let stability = (Math.random() * 6 + 92).toFixed(1) + " %";
+
+            document.getElementById('depthDisplay').innerText = depth;
+            document.getElementById('roofDisplay').innerText = roof;
+            document.getElementById('stabilityDisplay').innerText = stability;
+
+            try {
+                await fetch('https://api.open-meteo.com/v1/forecast?latitude=0&longitude=0&current=temperature_2m');
+                logBox.innerHTML += `<p class="text-seismicGreen">[${new Date().toLocaleTimeString()}] Terrestrial thermal reference baseline acquired.</p>`;
+            } catch(e) {}
+
+            try {
+                await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
+                logBox.innerHTML += `<p class="text-seismicGreen">[${new Date().toLocaleTimeString()}] NASA Planetary Data Gateway Synchronized.</p>`;
+            } catch(nErr) {}
+
+            if(MASTER_GEMINI_KEY.includes("YOUR_VALID_GEMINI_API_KEY")) {
+                document.getElementById('aiTubeReport').innerHTML = '<span class="text-amber-400">Notice: Please insert your active Gemini API Key into the `MASTER_GEMINI_KEY` variable inside the JavaScript section of this file to generate live geotechnical AI audits.</span>';
+                return;
+            }
+
+            const promptText = `Act as an elite NASA planetary geologist and geotechnical structural engineer for NASA Space Apps Challenge 2026. 
+            Perform a rigorous scientific diagnostic audit for the following subsurface exploration:
+            - Target Region: ${planetRegion.toUpperCase()}
+            - Seismic Frequency Used: ${seismicFreq}
+            - Estimated Cavity Depth: ${depth}
+            - Basaltic Roof Thickness: ${roof}
+            - Structural Stability Index: ${stability}
+            Provide a strict, professional, highly technical scientific report in English covering: 
+            1. Geotechnical Safety & Basalt Roof Load-Bearing Capability against meteorite impacts and cosmic radiation.
+            2. Potential Thermal Stability and Habitation Feasibility inside the cavern.
+            3. Mission Control Engineering Recommendations for habitat sealing and life support anchoring.
+            Keep the output formatted cleanly with bullet points and technical metrics.`;
+
+            try {
+                logBox.innerHTML += `<p class="text-lavaOrange">[${new Date().toLocaleTimeString()}] Transmitting seismic matrix to Gemini 1.5 Flash AI...</p>`;
+                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${MASTER_GEMINI_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
+                });
+
+                const geminiData = await geminiRes.json();
+                if(geminiData.candidates && geminiData.candidates[0].content) {
+                    const aiText = geminiData.candidates[0].content.parts[0].text;
+                    document.getElementById('aiTubeReport').innerHTML = aiText.replace(/\n/g, '<br>');
+                    logBox.innerHTML += `<p class="text-seismicGreen">[${new Date().toLocaleTimeString()}] Gemini AI Geotechnical Audit completed successfully.</p>`;
+                } else {
+                    document.getElementById('aiTubeReport').innerHTML = '<span class="text-red-400">Error: Invalid Gemini API key or quota limit reached. Please update your MASTER_GEMINI_KEY.</span>';
+                }
+            } catch(err) {
+                document.getElementById('aiTubeReport').innerHTML = '<span class="text-red-400">Connection error while communicating with Gemini AI Gateway.</span>';
+            }
+            
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

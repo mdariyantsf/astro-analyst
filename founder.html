@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Founder - AstroAnalyst</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        spaceBlack: '#0A0F1D',
+                        spaceCard: '#131C31',
+                        neonCyan: '#00F0FF',
+                        neonPurple: '#A855F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-spaceBlack text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-spaceBlack/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-rocket text-neonCyan text-2xl animate-pulse"></i>
+                <span class="text-xl font-bold tracking-wider text-white">Astro<span class="text-neonCyan">Analyst</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-neonCyan transition">Home</a>
+                <a href="explore.html" class="hover:text-neonCyan transition">Explore Hub</a>
+                <a href="founder.html" class="text-neonCyan transition font-semibold">Meet Founder</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Founder Section -->
+    <main class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <!-- Profile Card -->
+        <div class="bg-spaceCard border border-gray-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 flex flex-col items-center text-center space-y-6">
+                
+                <!-- Fixed Founder Photo Container -->
+                <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-neonCyan to-neonPurple p-1 shadow-2xl">
+                    <img src="founder.jpg" alt="MD. Ariyan Tausif" class="w-full h-full object-cover rounded-full bg-spaceBlack" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full bg-spaceBlack rounded-full items-center justify-center text-neonCyan text-5xl" style="display: none;">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                </div>
+
+                <!-- Name & Title -->
+                <div class="space-y-2">
+                    <span class="text-xs font-mono bg-cyan-500/10 text-neonCyan px-3 py-1 rounded-full border border-cyan-500/30">
+                        NASA SPACE APPS CHALLENGE &bull; LEAD DEVELOPER
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">MD. Ariyan Tausif</h1>
+                    <p class="text-neonCyan font-mono text-sm">Founder & Creator of AstroAnalyst</p>
+                </div>
+
+                <!-- Founder Mission -->
+                <div class="bg-spaceBlack/60 border border-gray-800 p-6 rounded-2xl text-left w-full space-y-2">
+                    <h3 class="text-neonCyan font-semibold flex items-center space-x-2 text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Founder's Mission</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+                        My primary mission is to make space science and astrobiology data accessible, interactive, and actionable through cutting-edge AI architectures. Through the NASA Space Apps Challenge, I strive to build innovative diagnostic tools that solve complex interplanetary and cosmic exploration challenges.
+                    </p>
+                </div>
+
+                <!-- Contact Info (Gmail Only) -->
+                <div class="flex flex-wrap justify-center gap-4 pt-2 text-sm">
+                    <a href="mailto:ariyantsf@gmail.com" class="bg-gray-800 hover:bg-gray-700 text-gray-200 px-5 py-2.5 rounded-xl border border-gray-700 flex items-center space-x-2 transition">
+                        <i class="fa-solid fa-envelope text-neonCyan"></i>
+                        <span>ariyantsf@gmail.com</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Direct Message Box Section -->
+        <div class="bg-spaceCard border border-gray-800 rounded-3xl p-8 sm:p-10 shadow-xl">
+            <div class="max-w-2xl mx-auto space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="text-2xl font-bold text-white">Get in Touch with the Founder</h2>
+                    <p class="text-gray-400 text-sm">Have any questions or feedback? Send a direct message straight to my inbox.</p>
+                </div>
+
+                <!-- Contact Form -->
+                <form action="https://formspree.io/f/xyzkqpqw" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Your Name</label>
+                        <input type="text" name="name" required class="w-full bg-spaceBlack border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-neonCyan focus:outline-none transition text-sm" placeholder="Enter your name...">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Your Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-spaceBlack border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-neonCyan focus:outline-none transition text-sm" placeholder="example@gmail.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Your Message / Question</label>
+                        <textarea name="message" rows="4" required class="w-full bg-spaceBlack border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-neonCyan focus:outline-none transition text-sm" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-neonCyan text-black font-semibold py-3 rounded-xl hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/20 text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Send Direct Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-spaceBlack border-t border-gray-800 py-8 text-center text-xs text-gray-500 mt-20">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>AstroAnalyst Platform &bull; Designed by MD. Ariyan Tausif</p>
+        </div>
+    </footer>
+
+</body>
+</html>

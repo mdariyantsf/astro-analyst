@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Mission Hub - AstroAnalyst</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        spaceBlack: '#0A0F1D',
+                        neonCyan: '#00F0FF',
+                        spaceCard: '#131C31'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-spaceBlack text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-spaceBlack/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-satellite text-neonCyan text-2xl animate-pulse"></i>
+                <span class="text-xl font-bold tracking-wider text-white">Astro<span class="text-neonCyan">Analyst</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-neonCyan transition">Home</a>
+                <a href="explore.html" class="text-neonCyan transition">Explore Hub</a>
+                <a href="founder.html" class="hover:text-neonCyan transition">Meet Founder</a>
+            </nav>
+            <div>
+                <a href="founder.html" class="bg-transparent border border-neonCyan text-neonCyan px-4 py-2 rounded-md text-sm font-semibold hover:bg-neonCyan hover:text-black transition">
+                    <i class="fa-solid fa-user-astronaut mr-2"></i>Meet Founder
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Explore Hub Main Section -->
+    <main class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center space-x-2 bg-spaceCard border border-gray-800 px-3 py-1 rounded-full text-xs text-neonCyan">
+                <i class="fa-solid fa-compass"></i>
+                <span>NASA Space Apps Challenge 2026 - Module Selection</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Choose a Mission <span class="text-neonCyan">Scientific Module</span></h1>
+            <p class="text-gray-400 text-sm">Select any category below to initialize its high-precision interactive analysis dashboard.</p>
+        </div>
+
+        <!-- Category Buttons / Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Category 1: Geospatial Analog (Official Challenge) -->
+            <a href="geospatial.html" class="bg-spaceCard border border-gray-800 hover:border-neonCyan rounded-xl p-8 space-y-4 transition group block shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div class="w-12 h-12 rounded-lg bg-neonCyan/10 border border-neonCyan/30 flex items-center justify-center text-neonCyan text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <span class="text-xs font-mono bg-neonCyan/10 text-neonCyan px-3 py-1 rounded border border-neonCyan/30">Primary Challenge</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-neonCyan transition">Earth-to-Moon & Mars Geospatial Analog Finder</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Identify Earth locations that analog permanent Moon base locations and Mars habitats using NASA Open Geospatial and USGS topography APIs[span_1](start_span)[span_1](end_span).
+                </p>
+                <div class="flex items-center text-xs font-semibold text-neonCyan pt-2">
+                    <span>Initialize Module</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Category 2: Quantum Communication -->
+            <a href="quantum.html" class="bg-spaceCard border border-gray-800 hover:border-neonCyan rounded-xl p-8 space-y-4 transition group block shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div class="w-12 h-12 rounded-lg bg-neonCyan/10 border border-neonCyan/30 flex items-center justify-center text-neonCyan text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs font-mono bg-purple-500/10 text-purple-400 px-3 py-1 rounded border border-purple-500/30">Web Crypto API</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-neonCyan transition">Quantum-Resistant Deep-Space Communication</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Encrypt deep-space telemetry streams and analyze real-time cosmic anomaly patterns using quantum-proof cryptographic protocols.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-neonCyan pt-2">
+                    <span>Initialize Module</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Category 3: Lava Tube Acoustic Mapper -->
+            <a href="lavatube.html" class="bg-spaceCard border border-gray-800 hover:border-neonCyan rounded-xl p-8 space-y-4 transition group block shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div class="w-12 h-12 rounded-lg bg-neonCyan/10 border border-neonCyan/30 flex items-center justify-center text-neonCyan text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </div>
+                    <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded border border-emerald-500/30">Seismic Data</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-neonCyan transition">Lunar / Martian Subsurface Lava Tube Mapper</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Analyze seismic and acoustic wave echoes to locate safe underground natural cavities and volcanic lava tubes for human habitats.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-neonCyan pt-2">
+                    <span>Initialize Module</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+            <!-- Category 4: Exoplanet Biosignature -->
+            <a href="biosignature.html" class="bg-spaceCard border border-gray-800 hover:border-neonCyan rounded-xl p-8 space-y-4 transition group block shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div class="w-12 h-12 rounded-lg bg-neonCyan/10 border border-neonCyan/30 flex items-center justify-center text-neonCyan text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <span class="text-xs font-mono bg-amber-500/10 text-amber-400 px-3 py-1 rounded border border-amber-500/30">JWST Spectra</span>
+                </div>
+                <h3 class="text-xl font-bold text-white group-hover:text-neonCyan transition">Exoplanet Biosignature Spectroscopic Examiner</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Cross-examine James Webb Space Telescope spectroscopic data to detect methane, oxygen, and atmospheric indicators of alien life.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-neonCyan pt-2">
+                    <span>Initialize Module</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-spaceBlack border-t border-gray-800 py-8 text-center text-xs text-gray-500 mt-16">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>AstroAnalyst Platform &bull; Team Ariyan &bull; NASA Space Apps Challenge 2026[span_2](start_span)[span_2](end_span)</p>
+            <p>Lead Developer & Founder: <strong class="text-neonCyan">MD.Ariyan Tausif</strong></p>
+        </div>
+    </footer>
+</body>
+</html>
