@@ -22,6 +22,10 @@
     </script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS for Interactive Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body class="bg-spaceBlack text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
 
@@ -63,7 +67,7 @@
             <!-- Earth Analog Site -->
             <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-xl">
                 <label class="block text-sm font-bold text-white"><i class="fa-solid fa-earth-americas text-neonCyan mr-2"></i> Select Earth Analog Site:</label>
-                <select id="earthSite" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white focus:border-neonCyan outline-none">
+                <select id="earthSite" onchange="updateMapLocation()" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white focus:border-neonCyan outline-none">
                     <option value="atacama">Atacama Desert, Chile (Mars Soil Analog)</option>
                     <option value="iceland">Icelandic Highlands (Lunar Basalt Analog)</option>
                     <option value="antarctica">Antarctic Dry Valleys (Extreme Cold/Radiation Analog)</option>
@@ -77,6 +81,19 @@
                     <option value="jezero">Jezero Crater, Mars (Ancient Lake Bed Habitat)</option>
                 </select>
             </div>
+        </div>
+
+        <!-- Interactive Map Display Box -->
+        <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-3 shadow-xl">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <h3 class="text-sm font-bold text-neonCyan uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> Live Interactive Analog Site Map
+                </h3>
+                <span class="text-[10px] font-mono bg-neonCyan/10 text-neonCyan px-2 py-0.5 rounded border border-neonCyan/30">LEAFLET GIS VIEW</span>
+            </div>
+            <p class="text-xs text-gray-400">Visualizing the geographical coordinates of the selected Earth analog test terrain.</p>
+            <!-- Map Container -->
+            <div id="map" class="w-full h-80 rounded-lg border border-gray-800 z-10"></div>
         </div>
 
         <!-- Action Button -->
@@ -220,10 +237,41 @@
         </div>
     </footer>
 
-    <!-- JavaScript Execution Logic with Master API Embedded -->
+    <!-- JavaScript Execution Logic with Master API & Map Embedded -->
     <script>
         // MASTER API KEY: আপনার জেমিনি এপিআই কি এখানে বসিয়ে দিন।
         const MASTER_GEMINI_KEY = "AIzaSy_YOUR_VALID_GEMINI_API_KEY_HERE"; 
+
+        // Initialize Leaflet Map
+        let map = L.map('map').setView([-23.8634, -69.1328], 6);
+
+        // Add Dark Theme CartoDB Tile Layer for Space Aesthetic
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+
+        let marker = L.marker([-23.8634, -69.1328]).addTo(map)
+            .bindPopup('<b>Atacama Desert, Chile</b><br>Mars Soil Analog Site')
+            .openPopup();
+
+        // Update Map Location on Dropdown Change
+        function updateMapLocation() {
+            const earthSite = document.getElementById('earthSite').value;
+            let lat = -23.8634, lon = -69.1328, siteName = "Atacama Desert, Chile", desc = "Mars Soil Analog";
+            
+            if(earthSite === 'iceland') { 
+                lat = 64.9631; lon = -19.0208; siteName = "Icelandic Highlands"; desc = "Lunar Basalt Analog"; 
+            } else if(earthSite === 'antarctica') { 
+                lat = -77.5000; lon = 161.6667; siteName = "Antarctic Dry Valleys"; desc = "Extreme Cold/Radiation Analog"; 
+            }
+
+            map.setView([lat, lon], 6);
+            marker.setLatLng([lat, lon])
+                .bindPopup(`<b>${siteName}</b><br>${desc}`)
+                .openPopup();
+        }
 
         async function runAnalysis() {
             const earthSite = document.getElementById('earthSite').value;
