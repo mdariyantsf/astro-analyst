@@ -104,7 +104,7 @@
             </button>
         </div>
 
-        <!-- Results & Telemetry Output Display (Always Visible Once, No Duplication) -->
+        <!-- Results & Telemetry Output Display -->
         <div id="resultSection" class="space-y-6 pt-4">
             <!-- Telemetry Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -239,17 +239,14 @@
 
     <!-- JavaScript Execution Logic with Master API & Map Embedded -->
     <script>
-        // MASTER API KEY: আপনার জেমিনি এপিআই কি এখানে বসিয়ে দিন।
-        const MASTER_GEMINI_KEY = "AIzaSy_YOUR_VALID_GEMINI_API_KEY_HERE"; 
+        const MASTER_GEMINI_KEY = "AQ.Ab8RN6IVf53JnfcXCBc_V5nQM3egfXO7_tKEhVlZW1PFOGCyjQ"; 
 
-        // Initialize Leaflet Map
+        // Initialize Leaflet Map (Using Free OpenStreetMap Tiles - No API Key Required)
         let map = L.map('map').setView([-23.8634, -69.1328], 6);
 
-        // Add Dark Theme CartoDB Tile Layer for Space Aesthetic
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 19
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         let marker = L.marker([-23.8634, -69.1328]).addTo(map)
