@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biosignature Spectrometer - Preview | AstroAnalyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        spaceBlack: '#040B18',
+                        spaceCard: '#0B132B',
+                        neonCyan: '#00F0FF',
+                        neonPurple: '#A855F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #040B18;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(11, 29, 58, 0.4) 0%, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
+
+    <!-- Top Navigation with Direct Main Project Entry Button -->
+    <header class="sticky top-0 z-50 bg-[#040B18]/90 backdrop-blur-md border-b border-cyan-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-2 text-gray-400 hover:text-neonCyan transition text-sm font-mono">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+            <!-- Top Button to Enter Main Project -->
+            <div>
+                <a href="biosignature.html" class="bg-neonCyan text-black hover:bg-cyan-400 font-bold px-4 py-2 rounded-xl transition text-xs sm:text-sm flex items-center space-x-2 shadow-lg shadow-cyan-500/20 animate-pulse">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Enter Live Technical Project (Biosignature)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Presentation, Slides & Description -->
+    <main class="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <!-- Header Title Banner -->
+        <div class="space-y-4 text-center sm:text-left border-b border-cyan-900/40 pb-8">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-neonCyan text-xs font-mono">
+                <i class="fa-solid fa-atom"></i>
+                <span>Module Preview &amp; Research Briefing</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                Biosignature <span class="text-neonCyan">Spectrometer</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base font-light">
+                Designed for NASA Space Apps Judges: An analytical breakdown of cross-examining exoplanet atmospheric spectra to detect potential extraterrestrial life indicators and chemical imbalances.
+            </p>
+            <div class="text-xs font-mono text-cyan-400 pt-2">
+                Lead Architect &amp; Founder: MD. Ariyan Tausif
+            </div>
+        </div>
+
+        <!-- Visual Slide Banner Box -->
+        <div class="bg-spaceCard border border-cyan-900/40 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="h-64 sm:h-80 w-full relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-t from-spaceCard via-spaceCard/40 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                    <div>
+                        <span class="bg-cyan-500/20 text-neonCyan text-xs font-mono px-3 py-1 rounded-full border border-cyan-500/40">SLIDE DECK 04 / SPECTRAL ANALYSIS</span>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white mt-2">Atmospheric Spectra &amp; Life Detection</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Description Section -->
+            <div class="p-6 sm:p-8 space-y-6 text-sm text-gray-300 font-light leading-relaxed">
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-info text-neonCyan"></i>
+                        <span>Project Concept &amp; Scientific Methodology</span>
+                    </h3>
+                    <p>
+                        Detecting life beyond Earth requires examining the light passing through distant exoplanet atmospheres to spot chemical biomarkers like oxygen, methane, and water vapor. The <strong>Biosignature Spectrometer</strong> module processes simulated spectral absorption lines to determine atmospheric habitability scores.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-black/40 p-4 rounded-2xl border border-cyan-900/40 space-y-1">
+                        <div class="text-neonCyan font-bold text-xs font-mono uppercase">Spectral Processing</div>
+                        <p class="text-xs text-gray-400">Analyzes wavelength light curves and filters out stellar noise interference.</p>
+                    </div>
+                    <div class="bg-black/40 p-4 rounded-2xl border border-cyan-900/40 space-y-1">
+                        <div class="text-neonCyan font-bold text-xs font-mono uppercase">Biomarker Index</div>
+                        <p class="text-xs text-gray-400">Calculates probability ratings for biological activity based on atmospheric composition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA to Enter Technical Project -->
+        <div class="bg-gradient-to-r from-cyan-950/40 to-spaceCard border border-cyan-500/40 rounded-3xl p-8 text-center space-y-4 shadow-2xl">
+            <h3 class="text-xl font-bold text-white">Ready to inspect the live spectrometer module?</h3>
+            <p class="text-xs text-gray-400 max-w-lg mx-auto">
+                You have reviewed the complete spectrometer briefing. Click below to launch the functional interface.
+            </p>
+            <div class="pt-2">
+                <a href="biosignature.html" class="inline-flex items-center space-x-3 bg-neonCyan text-black hover:bg-cyan-400 font-bold px-8 py-4 rounded-2xl text-base shadow-xl shadow-cyan-500/30 transition transform hover:scale-105">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>Open Main Biosignature Project (`biosignature.html`)</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#040B18] border-t border-cyan-900/40 py-8 text-center text-xs text-gray-500 mt-20 space-y-1">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>AstroAnalyst Platform &bull; NASA Space Apps Challenge 2026</p>
+            <p class="font-mono text-neonCyan">Lead Developer &amp; Founder: MD. Ariyan Tausif</p>
+        </div>
+    </footer>
+
+</body>
+</html>
