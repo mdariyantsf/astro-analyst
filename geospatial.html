@@ -239,7 +239,7 @@
 
     <!-- JavaScript Execution Logic with Master API & Map Embedded -->
     <script>
-        const MASTER_GEMINI_KEY = "AQ.Ab8RN6Lh0uXwcNgZSrUuhOWWR8XF6MTgKDFnuERkm4kpMzSMYQ"; 
+        const MASTER_GEMINI_KEY = "AQ.Ab8RN6..."; // আপনার আসল কি-টি এখানে বসানো থাকবে
 
         // Initialize Leaflet Map (Using Free OpenStreetMap Tiles - No API Key Required)
         let map = L.map('map').setView([-23.8634, -69.1328], 6);
@@ -319,8 +319,9 @@
             Keep the output formatted cleanly with bullet points and technical metrics.`;
 
             try {
-                logBox.innerHTML += `<p class="text-neonCyan">[${new Date().toLocaleTimeString()}] Querying Gemini 1.5 Flash AI Synapse...</p>`;
-                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${MASTER_GEMINI_KEY}`, {
+                logBox.innerHTML += `<p class="text-neonCyan">[${new Date().toLocaleTimeString()}] Querying Gemini 2.5 Flash AI Synapse...</p>`;
+                // Updated endpoint to use gemini-2.5-flash for seamless execution
+                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${MASTER_GEMINI_KEY}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
