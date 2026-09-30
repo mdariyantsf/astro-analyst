@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        spaceBlack: '#0A0F1D',
-                        spaceCard: '#131C31',
+                        spaceBlack: '#040B18',
+                        spaceCard: '#0B132B',
                         neonCyan: '#00F0FF',
                         neonPurple: '#A855F7'
                     }
@@ -23,11 +23,21 @@
     </script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #040B18;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(11, 29, 58, 0.4) 0%, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
-<body class="bg-spaceBlack text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
+<body class="text-gray-100 font-sans antialiased selection:bg-neonCyan selection:text-black">
 
     <!-- Header / Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-spaceBlack/90 backdrop-blur-md border-b border-gray-800">
+    <header class="sticky top-0 z-50 bg-[#040B18]/90 backdrop-blur-md border-b border-cyan-900/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <i class="fa-solid fa-rocket text-neonCyan text-2xl animate-pulse"></i>
@@ -39,7 +49,7 @@
                     <span>Innovation Core</span>
                 </a>
                 <a href="explore.html" class="bg-neonCyan text-black hover:bg-cyan-400 font-semibold px-4 py-2 rounded-xl transition text-sm flex items-center space-x-2 shadow-lg shadow-cyan-500/20">
-                    <i class="fa-solid fa-rocket"></i>
+                    <i class="fa-solid fa-compass"></i>
                     <span>Launch Hub</span>
                 </a>
             </div>
@@ -61,13 +71,12 @@
                 A high-precision, real-data-driven multi-module platform engineered for deep-space habitat analysis, quantum cryptography, subsurface acoustic mapping, and exoplanet biosignature detection.
             </p>
             
-            <!-- ৩টি বাটন একসাথে (Explore, Innovation, Founder) -->
+            <!-- Action Buttons -->
             <div class="flex flex-wrap justify-center sm:justify-start gap-4 pt-4">
                 <a href="explore.html" class="bg-neonCyan text-black hover:bg-cyan-400 font-semibold px-6 py-3 rounded-xl transition text-sm flex items-center space-x-2 shadow-lg shadow-cyan-500/20">
                     <i class="fa-solid fa-compass"></i>
                     <span>Open Explore Hub</span>
                 </a>
-                <!-- আপনার নতুন তৈরি করা Innovation পেজের বাটন -->
                 <a href="innovation.html" class="bg-gradient-to-r from-cyan-900/40 to-blue-900/40 hover:from-cyan-800/50 hover:to-blue-800/50 border border-neonCyan/50 text-neonCyan hover:text-white font-semibold px-6 py-3 rounded-xl transition text-sm flex items-center space-x-2 shadow-lg shadow-cyan-500/10">
                     <i class="fa-solid fa-lightbulb"></i>
                     <span>Core Innovation</span>
@@ -79,18 +88,18 @@
             </div>
         </div>
 
-        <!-- Telemetry & Local Video Demo Section -->
-        <div class="bg-spaceCard border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4">
+        <!-- Telemetry & Local Video Demo Section (demo.mp4 ফাইল সহ) -->
+        <div class="bg-spaceCard border border-cyan-900/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-4 backdrop-blur-md">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2 text-xs font-mono text-gray-400">
                     <i class="fa-solid fa-signal text-neonCyan animate-pulse"></i>
                     <span>PROJECT DEMO &amp; TELEMETRY FEED</span>
                 </div>
-                <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono px-2.5 py-0.5 rounded-full">ONLINE</span>
+                <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono px-2.5 py-0.5 rounded-full">READY TO UPLOAD (demo.mp4)</span>
             </div>
 
-            <!-- Video Player Box (লোকাল ভিডিও প্লেয়ার) -->
-            <div class="w-full h-72 sm:h-96 bg-spaceBlack rounded-2xl overflow-hidden border border-gray-800 relative flex items-center justify-center shadow-inner">
+            <!-- Video Player Box -->
+            <div class="w-full h-72 sm:h-96 bg-black/60 rounded-2xl overflow-hidden border border-cyan-900/50 relative flex items-center justify-center shadow-inner">
                 <video controls class="w-full h-full object-cover rounded-2xl">
                     <source src="demo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -98,88 +107,115 @@
             </div>
             
             <div class="flex justify-between items-center text-xs text-gray-400 px-1 pt-2 font-mono">
-                <span>Lead Architect: MD. Ariyan Tausif</span>
+                <span>Lead Architect &amp; Creator: MD. Ariyan Tausif</span>
                 <span>v2.6.0-PRO</span>
             </div>
         </div>
 
-        <!-- Explore Modules Cards Section -->
+        <!-- Large Visual Description / Slide Preview Banners (যেখানে বিচারকরা স্লাইড ও বাস্তব বর্ণনা দেখতে পাবেন) -->
         <div class="space-y-6 pt-4">
-            
-            <!-- Module 1 -->
-            <a href="explore.html" class="block bg-spaceCard border border-gray-800 hover:border-cyan-500/50 transition rounded-2xl p-6 shadow-xl group">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-neonCyan text-xl flex-shrink-0 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-globe"></i>
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-bold text-white tracking-wide flex items-center">
-                                Geospatial Analog Matcher <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 ml-2 group-hover:text-neonCyan"></i>
-                            </h3>
-                            <p class="text-gray-400 text-sm font-light">Compare Earth extreme terrains with Martian/Lunar topography using NASA Open APIs.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            <div class="text-center sm:text-left space-y-1">
+                <h2 class="text-2xl font-bold text-white">Mission <span class="text-neonCyan">Overview &amp; Slide Presentations</span></h2>
+                <p class="text-gray-400 text-xs font-mono">Click any banner below to review descriptive slides, conceptual analysis, and direct entry buttons to technical project tools.</p>
+            </div>
 
-            <!-- Module 2 -->
-            <a href="explore.html" class="block bg-spaceCard border border-gray-800 hover:border-cyan-500/50 transition rounded-2xl p-6 shadow-xl group">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-neonCyan text-xl flex-shrink-0 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-shield-halved"></i>
+            <div class="grid grid-cols-1 gap-6">
+                
+                <!-- Card 1: Geospatial Description Slide Page -->
+                <a href="geospatial-preview.html" class="block group relative overflow-hidden rounded-3xl border border-cyan-900/50 bg-spaceCard hover:border-neonCyan transition duration-300 shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-spaceBlack via-spaceBlack/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-neonCyan text-2xl flex-shrink-0 group-hover:bg-neonCyan group-hover:text-black transition shadow-lg">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">Concept &amp; Slide Preview</span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-wide">Geospatial Analog Matcher Overview</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm font-light max-w-xl">Review descriptive slides and comparative terrain analysis before accessing the live technical interface.</p>
+                            </div>
                         </div>
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-bold text-white tracking-wide flex items-center">
-                                Quantum Cryptography <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 ml-2 group-hover:text-neonCyan"></i>
-                            </h3>
-                            <p class="text-gray-400 text-sm font-light">Secure deep-space communication streams and anomaly logs via Web Crypto protocols.</p>
+                        <div class="flex items-center space-x-2 bg-neonCyan text-black font-semibold px-6 py-3 rounded-xl text-sm shadow-lg group-hover:bg-cyan-400 transition flex-shrink-0">
+                            <span>View Slides &amp; Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Module 3 (Innovation Highlight Card) -->
-            <a href="innovation.html" class="block bg-gradient-to-r from-spaceCard to-cyan-950/40 border border-cyan-500/40 hover:border-neonCyan transition rounded-2xl p-6 shadow-xl group">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-neonCyan text-xl flex-shrink-0 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-wave-square"></i>
+                <!-- Card 2: Quantum Cryptography Description Slide Page -->
+                <a href="quantum-preview.html" class="block group relative overflow-hidden rounded-3xl border border-cyan-900/50 bg-spaceCard hover:border-neonCyan transition duration-300 shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-spaceBlack via-spaceBlack/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-neonCyan text-2xl flex-shrink-0 group-hover:bg-neonCyan group-hover:text-black transition shadow-lg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">Concept &amp; Slide Preview</span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-wide">Quantum Cryptography Overview</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm font-light max-w-xl">Explore secure communication slide summaries and protocol breakdowns prior to technical validation.</p>
+                            </div>
                         </div>
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-bold text-white tracking-wide flex items-center">
-                                Lava Tube Acoustic Mapper & Innovation <span class="bg-cyan-500/20 text-neonCyan text-[10px] font-mono px-2 py-0.5 rounded ml-2">ORIGINAL</span>
-                            </h3>
-                            <p class="text-gray-300 text-sm font-light">Analyze seismic and acoustic resonance to locate safe underground lunar/martian cavities. View founder's architectural framework.</p>
+                        <div class="flex items-center space-x-2 bg-neonCyan text-black font-semibold px-6 py-3 rounded-xl text-sm shadow-lg group-hover:bg-cyan-400 transition flex-shrink-0">
+                            <span>View Slides &amp; Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </div>
                     </div>
-                    <div class="text-neonCyan text-sm font-semibold flex items-center space-x-1 group-hover:translate-x-1 transition">
-                        <span>Explore Innovation</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Module 4 -->
-            <a href="explore.html" class="block bg-spaceCard border border-gray-800 hover:border-cyan-500/50 transition rounded-2xl p-6 shadow-xl group">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-neonCyan text-xl flex-shrink-0 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-atom"></i>
+                <!-- Card 3: Lava Tube Acoustic Mapper Description Slide Page (Original Innovation) -->
+                <a href="lavatube-preview.html" class="block group relative overflow-hidden rounded-3xl border border-cyan-900/50 bg-spaceCard hover:border-neonCyan transition duration-300 shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-spaceBlack via-spaceBlack/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/15 border border-cyan-500/50 flex items-center justify-center text-neonCyan text-2xl flex-shrink-0 group-hover:bg-neonCyan group-hover:text-black transition shadow-lg">
+                                <i class="fa-solid fa-wave-square"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">Concept &amp; Slide Preview</span>
+                                    <span class="bg-cyan-500/20 text-neonCyan text-[10px] font-mono px-2 py-0.5 rounded">ORIGINAL INNOVATION</span>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-wide">Lava Tube Acoustic Mapper Overview</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm font-light max-w-xl">Inspect subsurface seismic slides, cavity research notes, and architectural design briefings.</p>
+                            </div>
                         </div>
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-bold text-white tracking-wide flex items-center">
-                                Biosignature Spectrometer <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 ml-2 group-hover:text-neonCyan"></i>
-                            </h3>
-                            <p class="text-gray-400 text-sm font-light">Cross-examine exoplanet atmospheric spectra to detect potential extraterrestrial life indicators.</p>
+                        <div class="flex items-center space-x-2 bg-neonCyan text-black font-semibold px-6 py-3 rounded-xl text-sm shadow-lg group-hover:bg-cyan-400 transition flex-shrink-0">
+                            <span>View Slides &amp; Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Bottom Buttons -->
-            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <!-- Card 4: Biosignature Spectrometer Description Slide Page -->
+                <a href="biosignature-preview.html" class="block group relative overflow-hidden rounded-3xl border border-cyan-900/50 bg-spaceCard hover:border-neonCyan transition duration-300 shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-spaceBlack via-spaceBlack/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-neonCyan text-2xl flex-shrink-0 group-hover:bg-neonCyan group-hover:text-black transition shadow-lg">
+                                <i class="fa-solid fa-atom"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">Concept &amp; Slide Preview</span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-wide">Biosignature Spectrometer Overview</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm font-light max-w-xl">Examine atmospheric spectrum summary slides and life-detection metrics before jumping into code.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-neonCyan text-black font-semibold px-6 py-3 rounded-xl text-sm shadow-lg group-hover:bg-cyan-400 transition flex-shrink-0">
+                            <span>View Slides &amp; Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Bottom CTA Buttons -->
+            <div class="pt-6 flex flex-wrap justify-center gap-4">
                 <a href="explore.html" class="inline-flex items-center space-x-2 text-neonCyan hover:text-cyan-300 font-semibold border border-cyan-500/30 bg-cyan-500/5 hover:bg-cyan-500/10 px-8 py-3 rounded-xl transition text-sm shadow-md">
                     <span>Enter Explore Mission Hub</span>
                     <i class="fa-solid fa-arrow-right"></i>
@@ -195,7 +231,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-spaceBlack border-t border-gray-800 py-8 text-center text-xs text-gray-500 mt-20 space-y-1">
+    <footer class="bg-[#040B18] border-t border-cyan-900/40 py-8 text-center text-xs text-gray-500 mt-20 space-y-1">
         <div class="max-w-7xl mx-auto px-4 space-y-2">
             <p>AstroAnalyst Platform &bull; NASA Space Apps Challenge 2026</p>
             <p class="font-mono text-neonCyan">Lead Developer &amp; Founder: MD. Ariyan Tausif</p>
