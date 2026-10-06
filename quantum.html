@@ -59,7 +59,7 @@
             <p class="text-gray-400 text-sm max-w-2xl mx-auto">Encrypt deep-space telemetry streams using Web Crypto API, integrate live NASA API telemetry, and simulate interference-free transmission.</p>
         </div>
 
-        <!-- JUDGES ATTRACTION SECTION: Post-Quantum Cryptography Matrix -->
+        <!-- Post-Quantum Cryptography Matrix -->
         <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-xl relative overflow-hidden">
             <div class="flex items-center justify-between border-b border-gray-800 pb-3">
                 <h3 class="text-xs font-mono text-neonCyan uppercase tracking-wider flex items-center">
@@ -92,12 +92,15 @@
                 <input type="text" id="telemetryInput" value="DEPLOY_HABITAT_SHIELD_SECTOR_09" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-neonCyan font-mono focus:border-neonCyan outline-none">
                 <p class="text-[11px] text-gray-500">Enter secure operational command to be encrypted via post-quantum algorithms.</p>
             </div>
-            <!-- Target Deep-Space Node -->
+            <!-- Target Deep-Space Node (Expanded Options) -->
             <div class="bg-spaceCard border border-gray-800 rounded-xl p-6 space-y-4 shadow-xl">
                 <label class="block text-sm font-bold text-white"><i class="fa-solid fa-signal text-neonCyan mr-2"></i> Target Relay Station:</label>
                 <select id="targetRelay" class="w-full bg-black border border-gray-800 rounded-lg p-3 text-sm text-white focus:border-neonCyan outline-none">
                     <option value="moon">Shackleton Base Relay, Moon (Latency: 1.3s)</option>
+                    <option value="gateway">Lunar Gateway Orbital Station (Latency: 1.5s)</option>
                     <option value="mars">Jezero Horizon Gateway, Mars (Latency: 14.2m)</option>
+                    <option value="phobos">Phobos Deep-Space Outpost, Mars Orbit (Latency: 12.8m)</option>
+                    <option value="europa">Europa Clipper Relay, Jupiter Orbit (Latency: 38.4m)</option>
                 </select>
                 <p class="text-[11px] text-gray-500">Select interplanetary destination node for secure packet handshake.</p>
             </div>
@@ -170,7 +173,7 @@
 
     <!-- JavaScript Execution Logic integrating Web Crypto & NASA API with Timeout Safety -->
     <script>
-        const NASA_API_KEY = "DEMO_KEY"; // আপনার নিজস্ব কি থাকলে এখানে বসাতে পারেন
+        const NASA_API_KEY = "DEMO_KEY";
 
         async function runQuantumTransmission() {
             const payload = document.getElementById('telemetryInput').value;
@@ -196,15 +199,13 @@
                 logBox.innerHTML += `<p class="text-red-400">[${new Date().toLocaleTimeString()}] Web Crypto API error encountered.</p>`;
             }
 
-            // Link stability visual update
             document.getElementById('linkDisplay').innerText = (Math.random() * 5 + 94.5).toFixed(2) + " %";
 
-            // 2. Fetch Live NASA API with a Timeout Safety Mechanism
+            // 2. Fetch Live NASA API with Timeout Safety
             let nasaInfo = "Standard Deep-Space Relay Active (Orbital Sync)";
             try {
                 logBox.innerHTML += `<p class="text-neonCyan">[${new Date().toLocaleTimeString()}] Querying NASA API Gateway...</p>`;
                 
-                // Timeout wrapper to prevent infinite hanging (4 seconds limit)
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 4000);
 
