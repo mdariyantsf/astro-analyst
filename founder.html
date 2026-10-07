@@ -97,10 +97,12 @@
                     <p class="text-gray-400 text-sm">Have any questions or feedback? Send a direct message straight to my inbox.</p>
                 </div>
 
-                <!-- Contact Form (Updated with FormSubmit link) -->
+                <!-- Contact Form (Updated with FormSubmit link and Redirect) -->
                 <form action="https://formsubmit.co/ariyantsf@gmail.com" method="POST" class="space-y-4">
                     <!-- Disable Captcha for smooth experience -->
                     <input type="hidden" name="_captcha" value="false">
+                    <!-- Automatically redirect back to your founder page after submission -->
+                    <input type="hidden" name="_next" value="https://mdariyantsf.github.io/astro-analyst/founder.html">
                     
                     <div>
                         <label class="block text-xs font-mono text-gray-400 mb-1">Your Name</label>
